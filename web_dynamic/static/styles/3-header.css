@@ -13,15 +13,10 @@ header .logo {
 /* Styles for the api_status div */
 header #api_status {
     position: absolute;
-	top: 15px;
+	  top: 15px;
     right: 30px;
     width: 40px;
     height: 40px;
-    background-color: #cccccc;
+    background-color: #ccc;
     border-radius: 50%;
-}
-
-/* Styles for the available class */
-.available {
-    background-color: #ff545f;
 }

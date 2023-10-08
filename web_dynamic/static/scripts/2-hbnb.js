@@ -1,5 +1,4 @@
 $(document).ready(() => {
-
   // Get the input element with the checkbox type property
   const amenityCheckbox = $('input[type="checkbox"]');
   const checkedAmenities = [];
@@ -31,7 +30,6 @@ $(document).ready(() => {
     // Update the h4 tag inside the div Amenities with the formatted list
     const header4 = $('div.amenities h4');
     header4.html(formattedAmenities + '&nbsp;');
-    console.log(header4.html());
   });
 
   // Get API Status
@@ -39,16 +37,18 @@ $(document).ready(() => {
     url: 'http://0.0.0.0:5001/api/v1/status/',
     method: 'GET',
     dataType: 'json',
-    success: (data, textStatus, jqXHR) => {
-      console.log(jqXHR.status);
-      if (jqXHR.status === 200) {
-        const divHeader = $('div#api_status');
-        divHeader.toggleClass('available');
+    success: (data, status, xhr ) => {
+      const divHeader = $('#api_status');
+      if (xhr.status === 200) {
+        divHeader.addClass('available');
+        $('#api_status.available')
+          .css('background-color', '#ff545f');
       }
     },
-    error: (jqXHR, textStatus, errorThrown) => {
+    error: (xhr, status, error) => {
       // Handle the error here
-      console.error('Error:', errorThrown);
+      const divHeader = $('#api_status');
+      divHeader.removeClass('available');
     }
   });
 });
