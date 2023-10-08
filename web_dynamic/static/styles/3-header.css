@@ -9,3 +9,21 @@ header .logo {
     left: 20px;
     height: 100%;
 }
+
+/* Styles for the api_status div */
+header #api_status {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    margin-top: 0; /* Remove any top margin */
+}
+
+/* Styles for the available class */
+.available {
+    background-color: #ff545f;
+}
